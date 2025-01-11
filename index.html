@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.2/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- กำหนด cursor -->
+      <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera>
+
+      <a-plane position="0 0 0" rotation="-90 0 0" width="50" height="50" color="#7CFC00"></a-plane>
+
+      <a-sky color="#87CEEB"></a-sky>
+
+      <!-- เพิ่ม link ในกล่อง -->
+      <a-box position="5 0.5 -10" depth="10" height="1" width="10" color="#8B4513">
+      </a-box>
+      <a-entity gltf-model="animal/Lion.glb" position="5 0.5 -10" scale="0.5 0.5 0.5"></a-entity>
+      
+      <a-box position="10 0 10" depth="2" height="2" width="2" color="#8B4513">
+        <a-link href="p1.html"></a-link>
+        <!-- ลิงก์ ไปหน้าอื่น -->
+      </a-box>
+      
+      <!-- โซนช้าง -->
+      <a-box position="-5 0.5 -15" depth="10" height="1" width="10" color="#8B4513">
+      </a-box>
+      <a-entity gltf-model="animal/Elephant.glb" position="-5 0.5 -15" scale="0.7 0.7 0.7"></a-entity>
+
+      <!-- บ่อน้ำสัตว์ทะเล -->
+      <a-plane position="0 0 -20" rotation="-90 0 0" width="15" height="15" material="shader: water; color: #1E90FF"></a-plane>
+
+      <a-cylinder position="10 1 -5" radius="0.5" height="2" color="#8B4513"></a-cylinder>
+      <a-sphere position="10 2 -5" radius="1.5" color="#228B22"></a-sphere>
+
+      <a-cylinder position="5 1 -5" radius="0.5" height="2" color="#8B4513"></a-cylinder>
+      <a-sphere position="5 2 -5" radius="1.5" color="#228B22"></a-sphere>
+
+      <!-- ทางเดิน -->
+      <a-plane position="0 0.01 0" rotation="-90 0 0" width="50" height="5" color="#A9A9A9"></a-plane>
+
+      <a-sound src="chill.mp3" autoplay="true" loop="true"></a-sound>
+    </a-scene>
+  </body>
+</html>
