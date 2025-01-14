@@ -1,201 +1,256 @@
 <html>
-  <head>
-    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-    <title>VrZoo</title>
 
-  </head>
-  <body>
-    <a-scene>
+<head>
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <title>VrZoo</title>
+</head>
 
-      
-      <a-sky color="#0C2461"></a-sky>
+<body>
+  <a-scene>
 
-      <!-- โมเดล -->
-      <a-asset-item id="tetra" src="./Model/Tetra.glb"></a-asset-item>
-      <a-asset-item id="whale" src="./Model/Whale.glb"></a-asset-item>
-      <a-asset-item id="gold" src="./Model/Gold.glb"></a-asset-item>
-      <a-asset-item id="goldfish" src="./Model/Goldfish.glb"></a-asset-item>
-      <a-asset-item id="clownfish" src="./Model/Clownfish.glb"></a-asset-item>
-      <a-asset-item id="trout" src="./Model/Trout.glb"></a-asset-item>
+    <a-sky color="#0C2461"></a-sky>
 
-      <!-- อุโมงค์ -->
-      <a-cylinder
-        position="0 1.6 -2.2"
-        radius="2"
-        height="15"
-        rotation="90 0 0"
-        material="side: double; opacity: 0.4; color: #85C1E9"
-        open-ended="true">
+    <!-- โมเดล -->
+    <a-asset-item id="tetra" src="./Model/Tetra.glb"></a-asset-item>
+    <a-asset-item id="whale" src="./Model/Whale.glb"></a-asset-item>
+    <a-asset-item id="gold" src="./Model/Gold.glb"></a-asset-item>
+    <a-asset-item id="goldfish" src="./Model/Goldfish.glb"></a-asset-item>
+    <a-asset-item id="clownfish" src="./Model/Clownfish.glb"></a-asset-item>
+    <a-asset-item id="trout" src="./Model/Trout.glb"></a-asset-item>
+
+    <!-- อุโมงค์ -->
+    <a-cylinder position="0 1.6 -2.2" radius="2" height="15" rotation="90 0 0"
+      material="side: double; opacity: 0.4; color: #85C1E9" open-ended="true">
+    </a-cylinder>
+
+    <!-- ทางเดิน -->
+    <a-box position="0 0 -2.2" depth="15" height="0.1" width="1.5" color="#34495E">
+    </a-box>
+    <a-box position="0.8 0.5 -2.2" depth="15" height="1" width="0.05" color="#566573">
+    </a-box>
+    <a-box position="-0.8 0.5 -2.2" depth="15" height="1" width="0.05" color="#566573">
+    </a-box>
+
+    <!-- น้ำ -->
+    <a-entity position="0 3 0">
+      <a-plane width="4" height="12" rotation="0 0 0" material="opacity: 0.3; color: #3498DB"
+        animation="property: material.opacity; to: 0.5; dur: 2000; dir: alternate; loop: true">
+      </a-plane>
+    </a-entity>
+
+    <!-- สาหร่าย -->
+    <a-entity position="2.5 0.1 3">
+      <a-cylinder color="#27AE60" height="2" radius="0.05"
+        animation="property: rotation; to: 0 0 15; dur: 2000; dir: alternate; loop: true">
       </a-cylinder>
+      <a-cylinder position="0.2 0 0.2" color="#2ECC71" height="1.7" radius="0.05"
+        animation="property: rotation; to: 0 0 -15; dur: 2300; dir: alternate; loop: true">
+      </a-cylinder>
+    </a-entity>
 
-      <!-- ทางเดิน -->
-      <a-box
-        position="0 0 -2.2"
-        depth="15"
-        height="0.1"
-        width="1.5"
-        color="#34495E">
-      </a-box>
-      <a-box
-        position="0.8 0.5 -2.2"
-        depth="15"
-        height="1"
-        width="0.05"
-        color="#566573">
-      </a-box>
-      <a-box
-        position="-0.8 0.5 -2.2"
-        depth="15"
-        height="1"
-        width="0.05"
-        color="#566573">
-      </a-box>
-
-      <!-- น้ำ -->
-      <a-entity position="0 3 0">
-        <a-plane
-          width="4"
-          height="12"
-          rotation="0 0 0"
-          material="opacity: 0.3; color: #3498DB"
-          animation="property: material.opacity; to: 0.5; dur: 2000; dir: alternate; loop: true">
-        </a-plane>
-      </a-entity>
-
-      <!-- สาหร่าย -->
-      <a-entity position="2.5 0.1 3">
-        <a-cylinder
-          color="#27AE60"
-          height="2"
-          radius="0.05"
-          animation="property: rotation; to: 0 0 15; dur: 2000; dir: alternate; loop: true">
-        </a-cylinder>
-        <a-cylinder
-          position="0.2 0 0.2"
-          color="#2ECC71"
-          height="1.7"
-          radius="0.05"
-          animation="property: rotation; to: 0 0 -15; dur: 2300; dir: alternate; loop: true">
-        </a-cylinder>
-      </a-entity>
-
-      <a-entity position="0 4 2">
-        <a-plane
-          height="4"
-          width="0.5"
-          rotation="-60 0 0"
-          material="opacity: 0.3; color: #F7F9F9"
-          animation="property: material.opacity; to: 0.1; dur: 2500; dir: alternate; loop: true">
-        </a-plane>
-      </a-entity>
-
-      <!-- ไฟ -->
-      <a-light type="ambient" color="#ffffff" intensity="0.5"></a-light>
-      <a-light
-        type="point"
-        color="#ffffff"
-        position="0 3 0"
-        intensity="0.8">
-      </a-light>
-      <a-light
-        type="spot"
-        color="#3498DB"
-        position="0 4 -4"
-        rotation="-90 0 0"
-        intensity="0.5">
-      </a-light>
-
-      <!-- ลานทางเข้า -->
-      <a-box
-        height="10"
-        width="10"
-        position="0 -0.5 10"
-        rotation="90 0 0">
-      </a-box>
-      <a-box
-        height="5"
-        width="4"
-        position="-3 2.025 5.5"
-        rotation="0 0 0">
-      </a-box>
-      <a-box
-        height="5"
-        width="4"
-        position="3 2.025 5.5"
-        rotation="0 0 0">
-      </a-box>
-      <a-box
-        height="1"
-        width="2"
-        position="0 4.02 5.5">
-      </a-box>
-      <a-box
-        height="5"
-        width="9"
-        position="5 2.025 10.5"
-        rotation="0 90 0"
-        depth="0.1">
-      </a-box>
-      <a-box
-        height="5"
-        width="9"
-        position="-5 2.025 10.5"
-        rotation="0 90 0"
-        depth="0.1">
-      </a-box>
-
-      <!-- ป้ายแนะนำ -->
-      <a-plane
-        height="1"
-        width="2"
-        position="-3 2.025 6.02"
-        color="#f55555">
+    <a-entity position="0 4 2">
+      <a-plane height="4" width="0.5" rotation="-60 0 0" material="opacity: 0.3; color: #F7F9F9"
+        animation="property: material.opacity; to: 0.1; dur: 2500; dir: alternate; loop: true">
       </a-plane>
-      <img id="recom" src="./img/shark.png" alt="shark">
-      <a-plane 
-        src="#recom"
-        height="2.5"
-        width="3"
-        position="3 2.025 6.02">
-      </a-plane>
+    </a-entity>
 
-      <!-- ปลาลอยไปลอยมา -->
-      <a-entity
-        gltf-model="#tetra"
-        position="10 1 -8"
-        scale="0.6 0.4 0.3"
-        animation="property: position; to: 8 1 2; dur: 5000; dir: alternate; loop: true">
-      </a-entity>
-      <a-entity
-        gltf-model="#tetra"
-        position="5 1 -8"
-        scale="0.6 0.4 0.3"
-        animation="property: position; to: 6 2 1; dur: 5000; dir: alternate; loop: true">
-      </a-entity>
+    <!-- ไฟ -->
+    <a-light type="ambient" color="#ffffff" intensity="0.5"></a-light>
+    <a-light type="point" color="#ffffff" position="0 3 0" intensity="0.8">
+    </a-light>
+    <a-light type="spot" color="#3498DB" position="0 4 -4" rotation="-90 0 0" intensity="0.5">
+    </a-light>
 
-      <!-- วาฬ -->
-      <a-entity
-        gltf-model="#whale"
-        position="1 12 -25"
-        scale="0.1 0.1 0.09"
-        rotation="0 45 0"
-        animation="property: position; to: 10 20 0; dur: 10000; dir: alternate; loop: true">
-      </a-entity>
+    <!-- ลานทางเข้า -->
+    <a-box height="10" width="10" position="0 -0.5 10" rotation="90 0 0">
+    </a-box>
+    <a-box height="5" width="4" position="-3 2.025 5.5" rotation="0 0 0">
+    </a-box>
+    <a-box height="5" width="4" position="3 2.025 5.5" rotation="0 0 0">
+    </a-box>
+    <a-box height="1" width="2" position="0 4.02 5.5">
+    </a-box>
+    <a-box height="5" width="9" position="5 2.025 10.5" rotation="0 90 0" depth="0.1">
+    </a-box>
+    <a-box height="5" width="9" position="-5 2.025 10.5" rotation="0 90 0" depth="0.1">
+    </a-box>
 
-      <!-- ปลาเทราท์ -->
-      <a-entity
-        gltf-model="#trout"
-        position="5 1 -15"
-        scale="0.01 0.005 0.005"
-        rotation="0 180 0"
-        animation="property: position; to: 4 3 2; dur: 5000; dir: alternate; loop: true">
-      </a-entity>
+    <!-- ป้ายแนะนำ -->
+    <a-plane height="1" width="2" position="-3 2.025 6.02" color="#f55555">
+    </a-plane>
+    <img id="recom" src="./img/shark.png" alt="shark">
+    <a-plane src="#recom" height="2.5" width="3" position="3 2.025 6.02">
+    </a-plane>
 
-      <!-- มุมมองตอนเข้ามา-->
-      <a-camera position="0 2 12">
-        <a-cursor color="#FFFFFF"></a-cursor>
-      </a-camera>
+    <!-- ปลาลอยไปลอยมา -->
+    <a-entity gltf-model="#tetra" position="10 1 -8" scale="0.6 0.4 0.3"
+      animation="property: position; to: 8 1 2; dur: 5000; dir: alternate; loop: true">
+    </a-entity>
+    <a-entity gltf-model="#tetra" position="5 1 -8" scale="0.6 0.4 0.3"
+      animation="property: position; to: 6 2 1; dur: 5000; dir: alternate; loop: true">
+    </a-entity>
 
-    </a-scene>
-  </body>
+    <!-- วาฬ -->
+    <a-entity gltf-model="#whale" position="1 12 -25" scale="0.1 0.1 0.09" rotation="0 45 0"
+      animation="property: position; to: 10 20 0; dur: 10000; dir: alternate; loop: true">
+    </a-entity>
+
+    <!-- ปลาเทราท์ -->
+    <a-entity gltf-model="#trout" position="5 1 -15" scale="0.01 0.005 0.005" rotation="0 180 0"
+      animation="property: position; to: 4 3 2; dur: 5000; dir: alternate; loop: true">
+    </a-entity>
+
+    <!-- มุมมองตอนเข้ามา-->
+    <a-camera position="0 2 12">
+      <a-cursor color="#FFFFFF"></a-cursor>
+    </a-camera>
+
+    <!-- ขอแยกออกมา -->
+    <!-- อุโมงค์เพิ่มเติม -->
+    <a-cylinder position="0 1.6 -17.2" radius="2" height="15" rotation="90 0 0"
+      material="side: double; opacity: 0.4; color: #85C1E9" open-ended="true">
+    </a-cylinder>
+
+    <a-cylinder position="0 1.6 -32.2" radius="2" height="15" rotation="90 0 0"
+      material="side: double; opacity: 0.4; color: #85C1E9" open-ended="true">
+    </a-cylinder>
+
+    <a-cylinder position="0 1.6 -17.2" radius="2" height="15" rotation="90 0 0"
+      material="side: double; opacity: 0.4; color: #85C1E9" open-ended="true"></a-cylinder>
+
+    <a-cylinder position="0 1.6 -32.2" radius="2" height="15" rotation="90 0 0"
+      material="side: double; opacity: 0.4; color: #85C1E9" open-ended="true"></a-cylinder>
+
+    <a-cylinder position="0 1.6 -47.2" radius="2" height="15" rotation="90 0 0"
+      material="side: double; opacity: 0.4; color: #85C1E9" open-ended="true"></a-cylinder>
+
+    <a-cylinder position="0 1.6 -62.2" radius="2" height="15" rotation="90 0 0"
+      material="side: double; opacity: 0.4; color: #85C1E9" open-ended="true"></a-cylinder>
+
+    <a-cylinder position="0 1.6 -77.2" radius="2" height="15" rotation="90 0 0"
+      material="side: double; opacity: 0.4; color: #85C1E9" open-ended="true"></a-cylinder>
+
+    <a-cylinder position="0 1.6 -92.2" radius="2" height="15" rotation="90 0 0"
+      material="side: double; opacity: 0.4; color: #85C1E9" open-ended="true"></a-cylinder>
+
+    <!-- ทางเดินและราวกั้น -->
+    <a-box position="0 0 -17.2" depth="15" height="0.1" width="1.5" color="#34495E">
+    </a-box>
+    <a-box position="0.8 0.5 -17.2" depth="15" height="1" width="0.05" color="#566573">
+    </a-box>
+    <a-box position="-0.8 0.5 -17.2" depth="15" height="1" width="0.05" color="#566573">
+    </a-box>
+
+    <a-box position="0 0 -32.2" depth="15" height="0.1" width="1.5" color="#34495E">
+    </a-box>
+    <a-box position="0.8 0.5 -32.2" depth="15" height="1" width="0.05" color="#566573">
+    </a-box>
+    <a-box position="-0.8 0.5 -32.2" depth="15" height="1" width="0.05" color="#566573">
+    </a-box>
+
+    <a-box position="0 0 -17.2" depth="15" height="0.1" width="1.5" color="#34495E"></a-box>
+    <a-box position="0.8 0.5 -17.2" depth="15" height="1" width="0.05" color="#566573"></a-box>
+    <a-box position="-0.8 0.5 -17.2" depth="15" height="1" width="0.05" color="#566573"></a-box>
+
+    <a-box position="0 0 -32.2" depth="15" height="0.1" width="1.5" color="#34495E"></a-box>
+    <a-box position="0.8 0.5 -32.2" depth="15" height="1" width="0.05" color="#566573"></a-box>
+    <a-box position="-0.8 0.5 -32.2" depth="15" height="1" width="0.05" color="#566573"></a-box>
+
+    <a-box position="0 0 -47.2" depth="15" height="0.1" width="1.5" color="#34495E"></a-box>
+    <a-box position="0.8 0.5 -47.2" depth="15" height="1" width="0.05" color="#566573"></a-box>
+    <a-box position="-0.8 0.5 -47.2" depth="15" height="1" width="0.05" color="#566573"></a-box>
+
+    <a-box position="0 0 -62.2" depth="15" height="0.1" width="1.5" color="#34495E"></a-box>
+    <a-box position="0.8 0.5 -62.2" depth="15" height="1" width="0.05" color="#566573"></a-box>
+    <a-box position="-0.8 0.5 -62.2" depth="15" height="1" width="0.05" color="#566573"></a-box>
+
+    <a-box position="0 0 -77.2" depth="15" height="0.1" width="1.5" color="#34495E"></a-box>
+    <a-box position="0.8 0.5 -77.2" depth="15" height="1" width="0.05" color="#566573"></a-box>
+    <a-box position="-0.8 0.5 -77.2" depth="15" height="1" width="0.05" color="#566573"></a-box>
+
+    <a-box position="0 0 -92.2" depth="15" height="0.1" width="1.5" color="#34495E"></a-box>
+    <a-box position="0.8 0.5 -92.2" depth="15" height="1" width="0.05" color="#566573"></a-box>
+    <a-box position="-0.8 0.5 -92.2" depth="15" height="1" width="0.05" color="#566573"></a-box>
+
+    <!-- โมเดล_1 -->
+    <a-asset-item id="shark" src="./model_1/Shark.glb"></a-asset-item>
+    <a-asset-item id="puffer" src="./model_1/Puffer.glb"></a-asset-item>
+    <a-asset-item id="manta_ray" src="./model_1/Manta_ray.glb"></a-asset-item>
+    <a-asset-item id="dolphin" src="./model_1/Dolphin.glb"></a-asset-item>
+    <a-asset-item id="coral" src="./model_1/Coral.glb"></a-asset-item>
+    <a-asset-item id="black_lion_fish" src="./model_1/Black_Lion_Fish.glb"></a-asset-item>
+    <a-asset-item id="anglerfish" src="./model_1/Anglerfish.glb"></a-asset-item>
+    <a-asset-item id="coral1" src="./model_1/coral_(1).glb"></a-asset-item>
+    <a-asset-item id="rock" src="./model_1/Rock.glb"></a-asset-item>
+    <a-asset-item id="rock1" src="./model_1/Rock_(1).glb"></a-asset-item>
+
+    <!-- coral -->
+    <a-entity gltf-model="#coral" position="-4.695 -1.86921 -2.87533" scale="0.03 0.03 0.03"
+      animation="dir: alternate; dur: 3000; easing: linear; loop: true; property: rotation; to: 0 60 0"
+      rotation="0 26.43 0"></a-entity>
+
+    <!-- shark -->
+    <a-entity gltf-model="#shark" position="18 2 -40" scale="0.5 0.5 0.5" rotation="0 45 0"
+      animation="dir: alternate; dur: 6000; easing: linear; loop: true; property: position; to: 20 2 -36"></a-entity>
+    <a-entity gltf-model="#shark" position="20 2 -40" scale="0.5 0.5 0.5" rotation="0 45 0"
+      animation="dir: alternate; dur: 6000; easing: linear; loop: true; property: position; to: 22 2 -36"></a-entity>
+    <a-entity gltf-model="#shark" position="15 2 -50" scale="0.5 0.5 0.5" rotation="0 45 0"
+      animation="dir: alternate; dur: 6000; easing: linear; loop: true; property: position; to: 17 2 -46"></a-entity>
+    <a-entity gltf-model="#shark" position="25 2 -55" scale="0.5 0.5 0.5" rotation="0 45 0"
+      animation="dir: alternate; dur: 6000; easing: linear; loop: true; property: position; to: 27 2 -51"></a-entity>
+    <a-entity gltf-model="#shark" position="30 2 -60" scale="0.5 0.5 0.5" rotation="0 45 0"
+      animation="dir: alternate; dur: 6000; easing: linear; loop: true; property: position; to: 32 2 -56"></a-entity>
+
+    <!-- manta_ray -->
+    <a-entity gltf-model="#manta_ray" position="3.5 6 -8" scale="0.7 0.7 0.7" rotation="0 30 0"
+      animation="dir: alternate; dur: 5000; easing: linear; loop: true; property: position; to: 5 4 -6"></a-entity>
+
+    <!-- puffer -->
+    <a-entity gltf-model="#puffer" position="-6.959 2.5 -56.7656" scale="0.5 0.5 0.5" rotation="0 -45 0"
+      animation="dir: alternate; dur: 7000; easing: linear; loop: true; property: position; to: -7 2.5 -50"></a-entity>
+    <a-entity gltf-model="#puffer" position="-8 2.8 -60" scale="0.5 0.5 0.5" rotation="0 -45 0"
+      animation="dir: alternate; dur: 7000; easing: linear; loop: true; property: position; to: -8 2.8 -54"></a-entity>
+    <a-entity gltf-model="#puffer" position="-9.5 3.2 -70" scale="0.5 0.5 0.5" rotation="0 -45 0"
+      animation="dir: alternate; dur: 7000; easing: linear; loop: true; property: position; to: -9.5 3.2 -64"></a-entity>
+    <a-entity gltf-model="#puffer" position="-11 2.1 -80" scale="0.5 0.5 0.5" rotation="0 -45 0"
+      animation="dir: alternate; dur: 7000; easing: linear; loop: true; property: position; to: -11 2.1 -74"></a-entity>
+
+    <!-- black_lion_fish -->
+    <a-entity gltf-model="#black_lion_fish" position="3 1 -40" scale="0.3 0.3 0.3" rotation="0 60 0"
+      animation="dir: alternate; dur: 6000; easing: linear; loop: true; property: position; to: 3 1 -35"></a-entity>
+
+    <!-- anglerfish -->
+    <a-entity gltf-model="#anglerfish" position="-3 1 -45" scale="0.4 0.4 0.4" rotation="0 -60 0"
+      animation="dir: alternate; dur: 7000; easing: linear; loop: true; property: position; to: -3 1 -40"></a-entity>
+
+    <!-- dolphin -->
+    <a-entity gltf-model="#dolphin" position="-10 8 -15" scale="0.6 0.6 0.6" rotation="0 -30 0"
+      animation="dir: alternate; dur: 5500; easing: linear; loop: true; property: position; to: -9 8 -12"></a-entity>
+    <a-entity gltf-model="#dolphin" position="-5 8.5 -18" scale="0.6 0.6 0.6" rotation="0 30 0"
+      animation="dir: alternate; dur: 6000; easing: linear; loop: true; property: position; to: -4 8.5 -14"></a-entity>
+    <a-entity gltf-model="#dolphin" position="-2 9 -20" scale="0.6 0.6 0.6" rotation="0 60 0"
+      animation="dir: alternate; dur: 6500; easing: linear; loop: true; property: position; to: -1 9 -16"></a-entity>
+
+    <!-- coral_(1) -->
+    <a-entity gltf-model="#coral1" position="-4.695 -3.86921 -2.87533" scale="0.4 0.4 0.4"
+      rotation="0 26.43 0"></a-entity>
+    <a-entity gltf-model="#coral1" position="-2 -3.86921 -15" scale="0.4 0.4 0.4" rotation="0 15 0"></a-entity>
+    <a-entity gltf-model="#coral1" position="3 -3.86921 -22" scale="0.4 0.4 0.4" rotation="0 10 0"></a-entity>
+    <a-entity gltf-model="#coral1" position="-6 -3.86921 -30" scale="0.4 0.4 0.4" rotation="0 -20 0"></a-entity>
+    <a-entity gltf-model="#coral1" position="5 -3.86921 -40" scale="0.4 0.4 0.4" rotation="0 35 0"></a-entity>
+
+    <!-- Rock -->
+    <a-entity gltf-model="#rock" position="4 -3.86921 -12" scale="3 3 3" rotation="0 10 0"></a-entity>
+    <a-entity gltf-model="#rock" position="-5 -3.86921 -35" scale="3.5 3.5 3.5" rotation="0 -20 0"></a-entity>
+
+    <!-- Rock_(1) -->
+    <a-entity gltf-model="#rock1" position="-6 -3.86921 -8" scale="2 2 2" rotation="0 30 0"></a-entity>
+    <a-entity gltf-model="#rock1" position="3.5 -3.86921 -18" scale="2.5 2.5 2.5" rotation="0 -15 0"></a-entity>
+    <a-entity gltf-model="#rock1" position="-2 -3.86921 -50" scale="3 3 3" rotation="0 45 0"></a-entity>>
+  </a-scene>
+
+  </a-entity>
+
+</body>
+
 </html>
